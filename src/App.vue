@@ -7,8 +7,8 @@
 <Block v-if="isPlaying" :delay = "delay" @end = "endGame">
   
 </Block>
-<p>reaction time : {{ score }} ms</p>
-<Result>
+
+<Result v-if="showResult" :score = "score">
 
 </Result>
 
@@ -30,7 +30,8 @@ export default {
     return {
       isPlaying:false ,
       delay: null,
-      score: null
+      score: null,
+      showResult: false
 
     }
   },
@@ -40,11 +41,13 @@ export default {
    this.delay = 2000 + Math.random() * 5000
    this.isPlaying = true 
    this.score = null
+   this.showResult = false
    } ,
 
    endGame(reactionTime) {
     this.score = reactionTime
     this.isPlaying = false
+    this.showResult = true
    }
 
   }
