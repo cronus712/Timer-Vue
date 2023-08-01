@@ -64,4 +64,20 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+button {
+ border: 1px solid rgb(0, 128, 102);
+ color: white;
+ background: green;
+ padding: 10px;
+ border-radius: 10px;
+ width: 80px;
+ font-size: 15px;
+}
+
+button:disabled {
+  cursor: none;
+  opacity: 0.5;
+  font-style: none;
+}
 </style>
